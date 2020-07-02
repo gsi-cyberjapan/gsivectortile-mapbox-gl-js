@@ -1,70 +1,70 @@
-# Mapbox GL JS�Œn���@�n�}Vector���̒n�}��\������T���v��
+# Mapbox GL JSで地理院地図Vector風の地図を表示するサンプル
 
-## �{���|�W�g���ɂ���
+## 本レポジトリについて
 
-[�n���@�n�}Vector�i���́j](https://maps.gsi.go.jp/vector/)�Œ񋟂��Ă���x�N�g���^�C���́A�o�T�𖾎�����������΁A�������̃T�C�g��A�v�����ł������p���������܂��B
+[地理院地図Vector（仮称）](https://maps.gsi.go.jp/vector/)で提供しているベクトルタイルは、出典を明示いただければ、ご自分のサイトやアプリ等でもご利用いただけます。
 
-�{���|�W�g���ł́A�Q�l�Ƃ��āA�x�N�g���^�C����\�������\�I�ȃ��C�u�����ł���[Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js)�𗘗p���āA�n���@�n�}Vector�̃x�N�g���^�C����\������T���v����񋟂��Ă��܂��B
+本レポジトリでは、参考として、ベクトルタイルを表示する代表的なライブラリである[Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js)を利用して、地理院地図Vectorのベクトルタイルを表示するサンプルを提供しています。
 
-�{�T���v���𗘗p���č\�z�����T�C�g�ɂ́A�o�T�̋L�ڂ����肢���܂��B
+本サンプルを利用して構築したサイトには、出典の記載をお願いします。
 
-�o�T�̋L�ڗ�F`<a href=�hhttps://maps.gsi.go.jp/vector/�h target=�hblank�h>�n���@�n�}Vector�i���́j</a>`
+出典の記載例：`<a href="https://maps.gsi.go.jp/vector/" target="_blank">地理院地図Vector（仮称）</a>`
 
-![�{�T���v���ɂ��n�}�̕\����istd.html�j](image/sample_std.png "�{�T���v���ɂ��n�}�̕\����istd.html�j")
+![本サンプルによる地図の表示例（std.html）](image/sample_std.png "本サンプルによる地図の表示例（std.html）")
 
 
 
-## �\�������x�N�g���^�C���ɂ���
+## 表示されるベクトルタイルについて
 
-�{�T���v���ŕ\������x�N�g���^�C����URL�͈ȉ��̒ʂ�ł��B
+本サンプルで表示するベクトルタイルのURLは以下の通りです。
 
 ```https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf```
 
-�x�N�g���^�C���̏ڍׂɂ��ẮA�ȉ��̃��|�W�g�����������������B
+ベクトルタイルの詳細については、以下のレポジトリをご覧ください。
 
-[�n���@�n�}Vector�i���́j�񋟎���](https://github.com/gsi-cyberjapan/gsimaps-vector-experiment)
-
-
-## �n���@�n�}Vector�Ƃ̑���_
-
-�{�T���v���̃X�^�C���ݒ�t�@�C���istyle.json�j�́A[Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/)�ɏ����������̂ƂȂ�܂��B����A�n���@�n�}Vector��style.json�ł́AStyle Specification���x�[�X�ɁA�኱�̊g�����{���Ă��܂��B���̂��߁A�n���@�n�}Vector�Ƃ́A�n�}�̕\�����قȂ镔�����������܂��B
-
-�n�}�̕\�����قȂ镔���̗�
-* �������̃n�b�`���O�\���͍s�킸�A���ׂēh��Ԃ��ŕ\�����Ă���܂��B
-* ���L�́A���ׂĉ������ƂȂ��Ă���܂��B���̂��߁A�{���̒��L�ʒu�Ƃ̂��ꓙ�A�\���ɕs������邱�Ƃ�����܂��B
-	* �c�������ł������\�������X�^�C���i��q��std_vertical.json�j���p�ӂ��Ă���܂����A�L�΂��_�u�\�v�����c�����\���ɂȂ�܂���B����́AMapbox GL JS�̎d�l�ɂ����̂ł��i2020�N4��23�����݁j�B
+[地理院地図Vector（仮称）提供実験](https://github.com/gsi-cyberjapan/gsimaps-vector-experiment)
 
 
-## �{�T���v����style.json�ꗗ
+## 地理院地図Vectorとの相違点
+
+本サンプルのスタイル設定ファイル（style.json）は、[Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/)に準拠したものとなります。一方、地理院地図Vectorのstyle.jsonでは、Style Specificationをベースに、若干の拡張を施しています。そのため、地理院地図Vectorとは、地図の表示が異なる部分がございます。
+
+地図の表示が異なる部分の例
+* 建物等のハッチング表現は行わず、すべて塗りつぶしで表現しております。
+* 注記は、すべて横書きとなっております。そのため、本来の注記位置とのずれ等、表示に不具合があることがあります。
+	* 縦書きをできる限り表現したスタイル（後述のstd_vertical.json）も用意しておりますが、伸ばし棒「―」等が縦書き表示になりません。これは、Mapbox GL JSの仕様によるものです（2020年4月23日現在）。
+
+
+## 本サンプルのstyle.json一覧
 
 ### std.json
 
-�n���@�n�}Vector�̕W���n�}���x�[�X�ɂ����X�^�C���ł��B
+地理院地図Vectorの標準地図をベースにしたスタイルです。
 
-�T���v���y�[�W https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/std.html
+サンプルページ https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/std.html
 
 ### std_vertical.json
 
-��L�Astd.json�ɒ��L�̏c�����\���̐ݒ���������X�^�C���ł��B
+上記、std.jsonに注記の縦書き表示の設定を加えたスタイルです。
 
-�T���v���y�[�W https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/std_vertical.html
+サンプルページ https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/std_vertical.html
 
 ### pale.json
 
-�n���@�n�}Vector�̒W�F�n�}���x�[�X�ɂ����X�^�C���ł��B
+地理院地図Vectorの淡色地図をベースにしたスタイルです。
 
-�T���v���y�[�W https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/pale.html
+サンプルページ https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/pale.html
 
 ### blank.json
 
-�n���@�n�}Vector�̔��n�}���x�[�X�ɂ����X�^�C���ł��B
+地理院地図Vectorの白地図をベースにしたスタイルです。
 
-�T���v���y�[�W https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/blank.html
+サンプルページ https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/blank.html
 
 
-## ���ӎ���
+## 注意事項
 
-�{���|�W�g���̃X�^�C���t�@�C���͎����I�ɒ񋟂��Ă�����̂ł��B�\���Ȃ��폜����\��������܂��B
+本レポジトリのスタイルファイルは実験的に提供しているものです。予告なく削除する可能性があります。
 
-�{���|�W�g���̃X�^�C���t�@�C���̗��p�ɂ�萶���������y�ё��Q���ɂ��āA���y�n���@�͂����Ȃ�ӔC������Ȃ����̂Ƃ��܂��B
+本レポジトリのスタイルファイルの利用により生じた損失及び損害等について、国土地理院はいかなる責任も負わないものとします。
 
