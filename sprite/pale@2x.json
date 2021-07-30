@@ -1,4 +1,4 @@
-﻿{
+{
   "unknown" : {"width":24,"height":24, "x":0,"y":0,"pixelRatio":1,"visible":true},
 "国道番号" : {"width":64,"height":64, "x":0,"y":256,"pixelRatio":1,"visible":true},
 "指示点" : {"width":64,"height":64, "x":64,"y":256,"pixelRatio":1,"visible":true},
