@@ -2,13 +2,13 @@
 
 ## 本レポジトリについて
 
-[地理院地図Vector（仮称）](https://maps.gsi.go.jp/vector/)で提供しているベクトルタイルは、出典を明示いただければ、ご自分のサイトやアプリ等でもご利用いただけます。
+[地理院地図Vector](https://maps.gsi.go.jp/vector/)で提供しているベクトルタイルは、出典を明示いただければ、ご自分のサイトやアプリ等でもご利用いただけます。
 
 本レポジトリでは、参考として、ベクトルタイルを表示する代表的なライブラリである[Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js)を利用して、地理院地図Vectorのベクトルタイルを表示するサンプルを提供しています。
 
 本サンプルを利用して構築したサイトには、出典の記載をお願いします。
 
-出典の記載例：`<a href="https://maps.gsi.go.jp/vector/" target="_blank">地理院地図Vector（仮称）</a>`
+出典の記載例：`<a href="https://maps.gsi.go.jp/vector/" target="_blank">地理院地図Vector</a>`
 
 ![本サンプルによる地図の表示例（std.html）](image/sample_std.png "本サンプルによる地図の表示例（std.html）")
 
@@ -22,7 +22,7 @@
 
 ベクトルタイルの詳細については、以下のレポジトリをご覧ください。
 
-[地理院地図Vector（仮称）提供実験](https://github.com/gsi-cyberjapan/gsimaps-vector-experiment)
+[地理院地図Vector提供実験](https://github.com/gsi-cyberjapan/gsimaps-vector-experiment)
 
 
 ## 地理院地図Vectorとの相違点
